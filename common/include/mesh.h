@@ -11,7 +11,7 @@
 #include "vertex.h"
 
 class mesh : public drawable {
-private:
+public:
   const std::vector<vertex> vertices;
   const std::vector<unsigned int> indices;
   const std::vector<texture> textures;

@@ -14,6 +14,8 @@ public:
 
   vertex(const glm::vec3 &position, const glm::vec3 &normal,
          const glm::vec2 &texCoords);
+
+  [[nodiscard]] vertex averge(const vertex& v) const;
 };
 
 #endif // INTERESTING_RENDERERS_VERTEX_H

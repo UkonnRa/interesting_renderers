@@ -5,7 +5,7 @@ set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CXX_STANDARD 17)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
-file(GLOB_RECURSE DIR_SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} src/*.cpp)
+file(GLOB_RECURSE DIR_SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}  src/*.cpp include/*.h)
 add_library(common ${DIR_SRC})
 
 target_include_directories(common PUBLIC ./include)
@@ -23,3 +23,6 @@ target_link_libraries(common PUBLIC assimp::assimp)
 
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(common PUBLIC glm)
+
+find_package(Catch2 CONFIG REQUIRED)
+target_link_libraries(common PUBLIC Catch2::Catch2)
